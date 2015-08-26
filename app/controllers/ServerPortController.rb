@@ -7,7 +7,7 @@ class ServerPort
 
   def call(env)
     status, header, response = @app.call(env)
-    body = response.first + env["SERVER_PORT"]
+    body = response.first + " " + env["SERVER_PORT"]
     [status, header, [body] ]
   end
 end

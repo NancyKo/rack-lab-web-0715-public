@@ -6,7 +6,7 @@ class RandomNumber
 
   def call(env)
     status, header, response = @app.call(env)
-    response_body = response.first + ' - ' + rand(100).to_s
+    response_body = response.first + " - " + rand(100).to_s
     [status, header, [response_body] ]
   end
 end
